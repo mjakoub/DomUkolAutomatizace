@@ -31,7 +31,7 @@ public class TestyPrihlasovaniNaKurzy {
 
         prihlaseniRodice("ssssss@seznam.cz", "Kobra11");
 
-        WebElement vydarenePrihlaseni = prohlizec.findElement(By.xpath("//a[contains(@title,'Sss')]"));  //je treba zmenit podle jmena uzivatele
+        WebElement vydarenePrihlaseni = prohlizec.findElement(By.xpath("//a[@class='dropdown-toggle']"));
         Assertions.assertNotNull(vydarenePrihlaseni);
     }
 
@@ -94,7 +94,7 @@ public class TestyPrihlasovaniNaKurzy {
 
 
     public void odhlasitSe() {
-        WebElement profil = prohlizec.findElement(By.xpath("//a[contains(@title,'Sss')]"));
+        WebElement profil = prohlizec.findElement(By.xpath("//a[@class='dropdown-toggle']"));
         profil.click();
         WebElement odhlaseni = prohlizec.findElement(By.xpath("//a[@id='logout-link']"));
         odhlaseni.click();
